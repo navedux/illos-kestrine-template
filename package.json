@@ -1,0 +1,16 @@
+{
+  "name": "kestrine-landing",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A landing page template for an AI document workflow product, with animated Illos illustrations.",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.3.5"
+  }
+}

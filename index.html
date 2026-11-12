@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kestrine: covenant checks and credit memos for specialty lenders</title>
+<meta name="description" content="Kestrine reads the borrower files behind equipment finance, venture debt and franchise loans, tests each covenant as reports come in and drafts the memo for credit committee.">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%224%22 y=%224%22 width=%228%22 height=%228%22 rx=%221.5%22 transform=%22rotate(45 8 8)%22 fill=%22%231daf9c%22/%3E%3C/svg%3E">
+<script>
+  // Theme: a saved choice wins, then the system setting. Runs before paint so nothing flashes.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem("kestrine-theme"); } catch (e) {}
+    if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#main" aria-label="Kestrine home"><i aria-hidden="true"></i>kestrine</a>
+    <nav class="links" aria-label="Main">
+      <a href="#workflows">How it works</a><a href="#desks">Loan types</a><a href="#proof">Lenders</a><a href="#security">Security</a>
+    </nav>
+    <div class="top-right">
+      <button class="btn btn-line theme" id="theme" type="button" aria-label="Switch theme">
+        <svg class="i-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21.5 14.08a8.56 8.56 0 0 1-12.58-7.55c0-1.46.36-2.83 1-4.03A9.63 9.63 0 0 0 2.5 11.87a9.63 9.63 0 0 0 19 2.2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 12a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 2v1.5M12 20.5V22M19.07 19.07l-1.06-1.06M5.99 5.99 4.93 4.93M22 12h-1.5M3.5 12H2M19.07 4.93l-1.06 1.06M5.99 18.01l-1.06 1.06" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <a class="btn btn-solid btn-sm" href="#contact">Get a demo</a>
+      <details class="menu">
+        <summary class="btn btn-line btn-sm" aria-label="Menu"><span class="bars" aria-hidden="true"></span><span>Menu</span></summary>
+        <nav class="menu-panel" aria-label="Mobile">
+          <a href="#workflows">How it works</a><a href="#desks">Loan types</a><a href="#proof">Lenders</a><a href="#security">Security</a>
+          <a class="btn btn-solid" href="#contact">Get a demo</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <p class="eyebrow"><b>Kestrine</b> For equipment finance, venture debt and franchise lenders</p>
+        <h1>Read every borrower file. <span class="accent">Test</span> every covenant.</h1>
+        <div class="hero-side">
+          <p>Kestrine pulls the numbers out of <b>compliance certificates</b>, invoices and royalty reports, tests them against your loan terms and writes up what it found.</p>
+          <div class="hero-actions">
+            <a class="btn btn-solid" href="#contact">Book a demo</a>
+            <a class="arrow" href="#workflows"><span>See a certificate tested</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="well well-hero" data-illos><!-- illos:covenant --></div>
+      <dl class="stats">
+        <div><dt>3,100</dt><dd>Certificates tested in a year by one equipment lessor</dd></div>
+        <div><dt>Same day</dt><dd>Term sheets at a venture debt fund, down from four days</dd></div>
+        <div><dt>2.4&times;</dt><dd>Franchise loans reviewed per analyst, with no new hires</dd></div>
+      </dl>
+      <div class="desks-for">
+        <p>Made for credit teams that <span class="accent">redo the math</span> before they fund.</p>
+        <ul>
+          <li>Equipment lessors</li><li>Venture debt funds</li><li>Franchise lenders</li><li>Fleet finance</li><li>Medical equipment lenders</li><li>Growth lenders</li><li>Small business lenders</li><li>Restaurant lenders</li><li>Captive finance arms</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="workflows">
+    <div class="wrap split">
+      <div class="split-head">
+        <p class="eyebrow"><b>01</b> How it works</p>
+        <h2>What happens when a borrower file lands.</h2>
+        <p>Kestrine opens each document, pulls the figures, checks them against the loan and files the result. You can see every step and the page behind every number.</p>
+        <ol class="toc">
+          <li><a href="#agents"><span>1.1</span>Step-by-step agents</a></li>
+          <li><a href="#outputs"><span>1.2</span>Committee memos</a></li>
+          <li><a href="#context"><span>1.3</span>Answers with sources</a></li>
+          <li><a href="#connectors"><span>1.4</span>Source status</a></li>
+        </ol>
+      </div>
+      <div class="entries">
+        <article class="entry" id="agents">
+          <div class="entry-meta"><span class="n">1.1</span><span class="tag">120 lending agents to copy</span></div>
+          <h3>Copy an agent for your loan type, or write your own steps</h3>
+          <p>An agent is a short list of steps. Open the file, pull the figures, check them, file the result. Nothing moves on until the check passes.</p>
+          <div class="well" data-illos><!-- illos:agent-steps --></div>
+          <a class="arrow" href="#"><span>See the agent list</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </article>
+        <article class="entry" id="outputs">
+          <div class="entry-meta"><span class="n">1.2</span><span class="tag">From loan book to memo</span></div>
+          <h3>Add up the whole book, then hand committee a memo they can mark up</h3>
+          <p>Kestrine sums the checked balance on every loan, shows your exposure, then writes the memo as an ordinary document your team can change.</p>
+          <div class="well" data-illos><!-- illos:outputs --></div>
+          <a class="arrow" href="#"><span>See a sample memo</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </article>
+        <article class="entry" id="context">
+          <div class="entry-meta"><span class="n">1.3</span><span class="tag">Answers with citations</span></div>
+          <h3>Ask about any borrower and see where the answer came from</h3>
+          <p>Kestrine searches the data room, the shared drive and the loan ledger, then cites the page behind each part of its reply.</p>
+          <div class="well" data-illos><!-- illos:sources --></div>
+          <a class="arrow" href="#"><span>How search works</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </article>
+        <article class="entry" id="connectors">
+          <div class="entry-meta"><span class="n">1.4</span><span class="tag">Sync status for every source</span></div>
+          <h3>Plug in your servicing system, CRM and drives, and know when one stops syncing</h3>
+          <p>When a source goes quiet, Kestrine tries again, pulls in the records it missed and tells you which loans it checked a second time.</p>
+          <div class="well" data-illos><!-- illos:connectors --></div>
+          <a class="arrow" href="#"><span>See supported systems</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="desks">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>02</b> Loan types</p>
+        <h2>Three kinds of lending, ready on day one.</h2>
+      </div>
+      <div class="desks">
+        <details class="desk" open>
+          <summary>
+            <span class="key">A</span>
+            <h3>Equipment Finance</h3>
+            <p>Match invoices, titles and lease schedules to the machines you hold as collateral.</p>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M19 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="desk-body">
+            <div class="desk-info">
+              <ul class="chips"><li class="chip">Invoice matching</li><li class="chip">Lien checks</li><li class="chip">Residual values</li><li class="chip">Lease schedules</li></ul>
+              <a class="arrow" href="#"><span>More on equipment finance</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <table class="ledger">
+              <thead><tr><th scope="col">Task</th><th scope="col">Before</th><th scope="col">With Kestrine</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+                <tr><td>Lease schedule review</td><td data-label="Before">About 2 hours</td><td data-label="With Kestrine">12 min</td><td class="res" data-label="Result">One analyst covers 3x the deals</td></tr>
+                <tr><td>Title and lien checks</td><td data-label="Before">Spot checks</td><td data-label="With Kestrine">Every serial number</td><td class="res" data-label="Result">Missing liens found before funding</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="desk">
+          <summary>
+            <span class="key">B</span>
+            <h3>Venture Debt</h3>
+            <p>Track cash, burn and revenue for each company from the packs it sends you.</p>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M19 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="desk-body">
+            <div class="desk-info">
+              <ul class="chips"><li class="chip">Monthly packs</li><li class="chip">Runway</li><li class="chip">Warrant terms</li><li class="chip">Minimum cash tests</li></ul>
+              <a class="arrow" href="#"><span>More on venture debt</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <table class="ledger">
+              <thead><tr><th scope="col">Task</th><th scope="col">Before</th><th scope="col">With Kestrine</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+                <tr><td>Monthly pack review</td><td data-label="Before">Half a day a company</td><td data-label="With Kestrine">25 min</td><td class="res" data-label="Result">Whole book read by the 5th</td></tr>
+                <tr><td>Minimum cash test</td><td data-label="Before">At quarter end</td><td data-label="With Kestrine">Every month</td><td class="res" data-label="Result">Shortfalls seen 8 weeks sooner</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+        <details class="desk">
+          <summary>
+            <span class="key">C</span>
+            <h3>Franchise Lending</h3>
+            <p>Compare unit sales, royalty reports and franchisor disclosures for every location you back.</p>
+            <span class="plus" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M19 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </summary>
+          <div class="desk-body">
+            <div class="desk-info">
+              <ul class="chips"><li class="chip">Disclosure review</li><li class="chip">Unit sales</li><li class="chip">Rent cover</li><li class="chip">Multi-unit roll-ups</li></ul>
+              <a class="arrow" href="#"><span>More on franchise lending</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+            </div>
+            <table class="ledger">
+              <thead><tr><th scope="col">Task</th><th scope="col">Before</th><th scope="col">With Kestrine</th><th scope="col">Result</th></tr></thead>
+              <tbody>
+                <tr><td>Franchisor disclosure review</td><td data-label="Before">About 3 hours</td><td data-label="With Kestrine">20 min</td><td class="res" data-label="Result">Credit view the same day</td></tr>
+                <tr><td>Unit sales roll-up</td><td data-label="Before">Rebuilt in a spreadsheet</td><td data-label="With Kestrine">Updated on upload</td><td class="res" data-label="Result">$480 to $30 a borrower</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="proof">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow"><b>03</b> Lenders</p>
+        <h2>Notes from credit teams (all made up).</h2>
+      </div>
+      <div class="voices">
+        <figure class="voice-big">
+          <div class="metric"><b>71%</b><span>Less time on monthly covenant tests</span></div>
+          <blockquote>We used to test covenants once a quarter and hope nothing broke in between. Now a certificate comes in, gets read, and the result is in my inbox before lunch.</blockquote>
+          <figcaption class="who">Rosa Kettering, Credit Director<span>Larchmont Equipment Finance</span></figcaption>
+        </figure>
+        <figure class="voice-side">
+          <div class="metric"><b>41</b><span>Portfolio companies covered by two people</span></div>
+          <blockquote>Two of us look after forty-one companies now. Their monthly packs get read the day they arrive, not the week after.</blockquote>
+          <figcaption class="who">Tobias Wren, Partner<span>Halyard Growth Debt</span></figcaption>
+        </figure>
+        <div class="notes">
+          <figure class="note"><blockquote>Our analysts stopped retyping royalty reports. They spend that hour calling borrowers instead.</blockquote><figcaption>Dana Ocampo, Saltmarsh Franchise Capital</figcaption></figure>
+          <figure class="note"><blockquote>The memo is a plain document. Committee edits it like any other draft, which is why people use it.</blockquote><figcaption>Felix Arnaud, Quarry Lane Leasing</figcaption></figure>
+          <figure class="note"><blockquote>Our servicing feed dropped overnight. By morning Kestrine had caught up and listed the loans it had checked again.</blockquote><figcaption>Mei Sato, Ridgefold Capital</figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="security">
+    <div class="wrap secure">
+      <div class="sec-head">
+        <p class="eyebrow"><b>04</b> Security</p>
+        <h2>Borrower files stay private.</h2>
+        <p>Kestrine does not train models on your files. Every read, check and edit is logged with who did it and when.</p>
+        <a class="arrow" href="#"><span>Read the security page</span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18.5 12H5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 18s6-4.42 6-6-6-6-6-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <dl class="checks">
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Outside audit</dt><dd>Once a year, report on request</dd></div>
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Penetration tests</dt><dd>Each spring and autumn</dd></div>
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Where data lives</dt><dd>A US or EU region, your pick</dd></div>
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Private install</dt><dd>For larger lenders</dd></div>
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Single sign-on</dt><dd>Included with every seat</dd></div>
+        <div><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12s4.48 10 10 10 10-4.48 10-10Z" stroke="currentColor" stroke-width="1.5"/><path d="m8 12.5 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><dt>Encryption keys</dt><dd>Held by you, if you prefer</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <p class="eyebrow"><b>05</b> Book a demo</p>
+          <h2>Bring one borrower file. We will test it with you on the call.</h2>
+          <figure>
+            <blockquote>We sent the messiest certificate we had, from a borrower who never uses the same layout twice. Kestrine read and tested it while we were still talking.</blockquote>
+            <figcaption>Hannah Brook, Coldwater Fleet Finance</figcaption>
+          </figure>
+        </div>
+        <form class="form" id="contact-form" action="#" method="post" novalidate>
+          <div class="field">
+            <label for="email">Work email</label>
+            <input id="email" name="email" type="email" autocomplete="email" placeholder="name@lender.com" required>
+          </div>
+          <div class="field">
+            <label for="desk">What you lend</label>
+            <select id="desk" name="desk">
+              <option>Equipment finance</option><option>Venture debt</option><option>Franchise loans</option><option>Other lending</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="slow">Which document takes the longest? <span class="opt">(optional)</span></label>
+            <textarea id="slow" name="slow" placeholder="Monthly compliance certificates, say"></textarea>
+          </div>
+          <button class="btn btn-solid" type="submit">Book my demo</button>
+          <p class="form-note" id="form-note" aria-live="polite">Someone from our credit team writes back within a day.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#main"><i aria-hidden="true"></i>kestrine</a>
+        <p>Covenant checks and credit memos for specialty lenders.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul><li><a href="#">Lending agents</a></li><li><a href="#">Covenant tests</a></li><li><a href="#">Committee memos</a></li><li><a href="#">Borrower search</a></li><li><a href="#">Source status</a></li></ul>
+      </div>
+      <div>
+        <h4>Lending</h4>
+        <ul><li><a href="#">Equipment finance</a></li><li><a href="#">Venture debt</a></li><li><a href="#">Franchise loans</a></li><li><a href="#">Lender notes</a></li><li><a href="#">Plans</a></li></ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul><li><a href="#">About us</a></li><li><a href="#">Hiring</a></li><li><a href="#">Security</a></li><li><a href="#">What's new</a></li><li><a href="#">Contact</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; 2026 Kestrine. A made-up product; every lender and quote here is invented.</span>
+      <nav aria-label="Legal"><a href="#">Terms</a><a href="#">Privacy</a><a class="illos-credit" href="https://illos.dev/?utm_source=kestrine-template&amp;utm_medium=example" rel="noopener"><svg viewBox="-26.8 0 400 400" aria-hidden="true"><path fill-rule="evenodd" d="M0,253.81 L0,100 L173.21,0 L346.41,100 L346.41,300 L173.21,400 L76.6,344.23 L76.6,204 L116.6,227.09 L116.6,321.13 L173.21,353.81 L306.41,276.91 L306.41,123.09 L173.21,46.19 L40,123.09 L40,276.91 Z M76.6,140 L116.6,163.09 L116.6,203.09 L76.6,180 Z"/></svg>Animated assets by Illos</a></nav>
+    </div>
+  </div>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
